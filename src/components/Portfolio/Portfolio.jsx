@@ -8,7 +8,7 @@ const Portfolio = () => {
     variants={staggerChildren}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: false, amount: 0.25 }}
+    viewport={{ once: true, amount: 0.25 }}
     className={`paddings ${css.wrapper}`}>
 
       <a className="anchor" id="portfolio"></a>
@@ -18,10 +18,10 @@ const Portfolio = () => {
 
         <motion.div variants={textVariant(.4)} className={`flexCenter ${css.heading}`}>
           <div>
-            <span className="primaryText">My Latest Works</span>
-            <p style={{marginTop: "10px"}}>Perfect solution for digital experience</p>
+            <span className="primaryText">Projects</span>
+            <p style={{marginTop: "10px"}}>Check out my <a style={{textDecoration:'none', fontWeight:'bold'}}href="https://github.com/andrewypark" target={"_blank"}>GitHub</a></p>
           </div>
-          <span className="secondaryText">Explore More Works</span>
+          <span className="secondaryText"></span>
         </motion.div>
 
 
