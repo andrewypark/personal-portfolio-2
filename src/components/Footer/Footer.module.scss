@@ -1,7 +1,7 @@
 @import '../../styles/contants.scss';
 
 .wrapper{
-    background: white;
+    background: #3F4E4F;
     .container{
         gap: 2rem;
         @media (max-width: $sm) {
@@ -20,7 +20,7 @@
 
                 a{
                     text-decoration: underline;
-                    color: orange;
+                    color: #A27B5C;
                 }
             }
         }
@@ -51,7 +51,7 @@
                 }
                 a{
                     text-decoration: none;
-                    color: #0D2f3f;
+                    color: #DCD7C9;
                 }
             }
         }

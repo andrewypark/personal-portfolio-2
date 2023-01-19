@@ -1,0 +1,267 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "system-ui", sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: var(--backgroundColor);
+  overflow-x: hidden;
+/* =================================================== */
+  --backgroundColor:radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #B7E8EB 100%);
+
+  --cardColor: rgb(184, 224, 218, 0.7);
+  --cardDanger: rgb(255, 169, 94, 0.7);
+
+  --cardBoxShadow:0 1px 5px rgb(178, 178, 178);
+  --cardExpiredBoxShadow:0 1px 5px rgb(178, 178, 178);
+
+  --cardButtonBackgroundColor:rgb(184, 224, 218, 0);
+  --cardButtonColor:#393E46;
+
+  --cardButtonHoverColor: rgb(0, 0, 0);
+  --cardButtonHoverBackgroundColor:rgb(0, 0, 0,0.2);
+/* ==================================================*/
+  --formBackground:#fff;
+  --formTextColor: #393E46;
+
+  --formBoxShadow:0 1px 5px rgb(138, 137, 137);
+  --formButtonBoxShadow: 0 1px 3px rgb(138, 137, 137);
+
+  --formButtonColor:#393E46;
+  --formButtonBackgroundColor:#F7ECDE;
+
+  --formButtonHoverColor:rgb(0,0,0);
+  --formButtonHoverBackgroundColor:rgb(0,0,0,0.2);
+}
+
+.dark-mode {
+  --backgroundColor:radial-gradient(ellipse at center, rgb(57, 91, 100, 1) 0%, rgb(57, 91, 100, 1) 35%, #2C3333 100%);
+/* ==================================================*/
+  --cardColor: rgb(62, 116, 123,0.7);
+  --cardDanger: rgb(193, 128, 72,0.7);
+
+  --cardBoxShadow:0 1px 5px #2C3434;
+  --cardExpiredBoxShadow:0 1px 5px #2C3434;
+
+  --cardButtonBackgroundColor:rgb(184, 224, 218, 0);
+  --cardButtonColor:#393E46;
+
+  --cardButtonHoverColor:rgb(197, 197, 197);
+  --cardButtonHoverBackgroundColor:rgb(0,0,0,0.2);
+  /* ==================================================*/
+  --formBackground:#355057;
+  --formTextColor: rgb(197, 197, 197);
+
+  --formBoxShadow:0 1px 5px #2C3434;
+  --formButtonBoxShadow: 0 1px 3px #2C3434;
+  
+  --formButtonColor:rgb(197, 197, 197);
+  --formButtonBackgroundColor:rgb(0, 0, 0,0.2);
+
+  --formButtonHoverColor:rgb(0,0,0);
+  --formButtonHoverBackgroundColor:#395B64;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: fixed;
+  top: 84%;
+  width: 6400px;
+  height: 1920px;
+  animation: wave 120s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: -2;
+}
+
+.wave:nth-of-type(2) {
+  top: 84%;
+  animation: wave 120s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.5s infinite, swell 10s ease -15.25s infinite;
+  opacity: 1;
+  z-index: -2;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+header {
+  margin: auto -16px;
+  padding: 2px 20px 5px 20px;
+
+}
+
+header h1 {
+  color: #393E46;
+  font-family: "system-ui", cursive;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+header p {
+  font-size: 0.75rem;
+  color: #a1cdcf;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  z-index: -1;
+}
+
+footer p {
+  color: #006480;
+}
+
+.cardExpired {
+  background: var(--cardDanger);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 16px;
+  width: 45%;
+  float: left;
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  box-shadow: var(--cardExpiredBoxShadow);
+}
+
+.card {
+  background: var(--cardColor);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 16px;
+  width: 45%;
+  float: left;
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  box-shadow: var(--cardBoxShadow);
+  backdrop-filter: blur(10px);
+  
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.card h1,
+.cardExpired h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.cardExpired button {
+  align-items: center;
+  position: relative;
+  background: var(--cardButtonBackgroundColor);
+  color: #393E46;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  outline: none;
+  float: right;
+}
+
+.card button {
+  align-items: center;
+  position: relative;
+  background: var(--cardButtonBackgroundColor);
+  color: var(--cardButtonColor);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  outline: none;
+  float: right;
+}
+
+form {
+  position: relative;
+  margin: 0.5rem 33% 1.5rem 33%;
+  background: var(--formBackground);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: var(--formBoxShadow);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 2px;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+  color: var(--formTextColor);
+  background: var(--formBackground);
+}
+
+form button {
+  position: absolute;
+  right: 10px;
+  bottom: -10px;
+  background: var(--formButtonBackgroundColor);
+  color: var(--formButtonColor);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: var(--formButtonBoxShadow);
+  cursor: pointer;
+  outline: none;
+}
+
+form button:hover {
+  background: var(--formButtonHoverBackgroundColor);
+  color: var(--formButtonHoverColor);
+}
+
+.card button:hover,
+.cardExpired button:hover {
+  background: var(--cardButtonHoverBackgroundColor);
+  color: var(--cardButtonHoverColor);
+}
