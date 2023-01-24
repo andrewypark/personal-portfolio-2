@@ -32,9 +32,9 @@ const Portfolio = () => {
           <a href="https://github.com/andrewypark/personal-portfolio-2">
             <motion.img variants={fadeIn("up", "tween", .7, .6)} src="./showCase2.png" alt="project" />
           </a>
-          {/* <a href="">
+          <a href="https://netflix-clone-4cdb5.web.app">
             <motion.img variants={fadeIn("up", "tween", .9, .6)} src="./showCase3.png" alt="project" />
-          </a> */}
+          </a>
         </div>
       </div>
     </motion.section>
