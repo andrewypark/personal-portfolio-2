@@ -29,10 +29,10 @@ const Portfolio = () => {
           <a href="https://classroomtimer.net/" target={'_blank'}>
             <motion.img variants={fadeIn("up", "tween", .5, .6)} src="./showCase1.png" alt="project" />
           </a>
-          <a href="https://github.com/andrewypark/personal-portfolio-2">
+          <a href="https://github.com/andrewypark/personal-portfolio-2" target={'_blank'}>
             <motion.img variants={fadeIn("up", "tween", .7, .6)} src="./showCase2.png" alt="project" />
           </a>
-          <a href="https://netflix-clone-4cdb5.web.app">
+          <a href="https://netflix-clone-4cdb5.web.app" target={'_blank'}>
             <motion.img variants={fadeIn("up", "tween", .9, .6)} src="./showCase3.png" alt="project" />
           </a>
         </div>
