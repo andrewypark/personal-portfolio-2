@@ -25,6 +25,10 @@
             justify-content: space-around;
             flex-wrap: wrap;
             >a{
+                text-decoration: none;
+                color: #A27B5C;
+                text-align: center;
+                opacity: .5;
                 >img{
                     @media (max-width: $sm) {
                         width: 100%;
@@ -35,6 +39,9 @@
                     box-shadow: 0px 21px 13px rgba(0, 0, 0, 13%);
                     cursor: pointer;
                 }
+            &:hover{
+                opacity: 1;
+            }
             }
         }
     }
